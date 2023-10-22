@@ -1,0 +1,90 @@
+.navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  background-color: var(--secondary-bg-color);
+  border-bottom: 1px solid var(--border-color);
+  .button {
+    display: block;
+    width: auto;
+    background-color: var(--secondary-bg-color);
+    color: var(--body-color);
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--secondary-bg-color) !important;
+      cursor: pointer;
+    }
+  }
+  input[type="checkbox"]:hover {
+    background-color: var(--secondary-bg-color);
+  }
+  &.collapse {
+    position: absolute;
+    z-index: 1;
+    height: calc( 100% - 3rem - 1px);
+    width: 100%;
+    align-items: start;
+    padding: 0 0.5rem;
+    border: none;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  &Menu {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    &Vertical {
+      padding: 0.5rem 0;
+      margin: 0;
+      list-style: none;
+      width: 100%;
+    }
+    &Vertical > &Vertical {
+      padding: 0;
+    }
+    &Vertical > &Item {
+      padding: 0.25rem 0 !important;
+    }
+    &Vertical > &Vertical > &Item > &Link {
+      padding: 0.25rem 1.75rem !important;
+    }
+    &Item {
+      padding: 0 0.5rem;
+    }
+    &Link {
+      display: block;
+      padding: 0.25rem 0.5rem;
+      color: var(--body-color);
+      text-decoration: none;
+      &:hover {
+          background-color: var(--tertiary-bg-color);
+          cursor: pointer;
+      }
+    }
+    &Link.disable {
+      color: var(--tertiary-bg-color);
+      &:hover {
+        background-color: var(--secondary-bg-color);
+        cursor: pointer;
+      }
+    }
+  }
+}
+#NavigationMenu {
+  flex: 1 0 0;
+  justify-content: space-around;
+}
+.vr {
+  width: 1px;
+  display: inline-block;
+  align-self: stretch;
+  min-height: 1rem;
+  background-color: currentcolor;
+  opacity: .25;
+}

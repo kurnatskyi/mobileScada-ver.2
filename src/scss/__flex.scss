@@ -1,0 +1,20 @@
+.row {
+  display: flex !important;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;  
+}
+@mixin makeColumn($part) {
+  flex: 0 0 auto;
+  width: calc(100%  * #{$part} / 10 - 0.5rem + #{$part} / 10 * 0.5rem) !important;
+  @if $part == 10 {
+    width: calc(100% * #{$part} / 10) !important;
+  }
+}
+@for $i from 1 through 20 {
+  .column__#{$i} {
+    @include makeColumn($i);
+  }
+}

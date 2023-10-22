@@ -1,0 +1,35 @@
+.button {
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+  border: 1px solid var(--body-color);
+  border-radius: 0.25rem;
+  background-color: var(--body-color);
+  color: var(--body-bg-color);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  vertical-align: middle;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--link-color-hover);
+    border-color: var(--link-color-hover);
+  }
+  &Outlined {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    background-color: var(--body-bg-color);
+    color: var(--border-color);
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.5rem;
+    &:hover {
+      background-color: var(--link-color-hover);
+      border-color: var(--link-color-hover);
+      color: var(--body-bg-color);  
+    }
+  }           
+}
+    

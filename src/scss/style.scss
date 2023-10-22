@@ -1,0 +1,213 @@
+@import "__functions";
+@import "__variables";
+@import "__reboot";
+@import "__flex";
+@import "__navigation";
+@import "__dropdown";
+@import "__inputs";
+@import "__buttons";
+@import "__alerts";
+@import "__windows";
+main {
+  position: absolute;
+  z-index: 0;
+  height: calc( 100% - 3rem - 1px);
+  width: 100%;
+  padding: 0.5rem;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.visible {
+  display: block;
+}
+.invisible {
+  display: none;
+  transition: none;
+}
+.page:not(.visible) {
+  display: none !important;
+}
+.show {
+  max-height: 100%;
+  overflow: hidden;
+  transition: max-height .2s ease-in;
+}
+.collapse:not(.show) {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-out;
+}
+.invalid {
+  border-color: var(--danger-color);
+}
+#PageSetting {
+  &General {
+    input, select {
+      @include makeColumn(10);
+    }
+    input, .row:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+    .row > select:first-of-type {
+      @include makeColumn(8.5);
+    }
+    .row > button:first-of-type {
+      @include makeColumn(1.5);
+    }
+    input + hr {
+      margin-top: 0 !important;
+    }
+    .row div {
+      @include makeColumn(5);
+    }
+  }
+  &Modbus {
+    .row {
+      div {
+        @include makeColumn(5);
+      }
+    }
+    select {
+      margin-bottom: 0.5rem;
+    }
+    .row + hr {
+      margin-top: 0 !important;
+    }
+  }
+  &Device {
+    .row:first-child {
+      justify-content: start;
+      div:first-child {
+        @include makeColumn(5);
+      }
+      div:last-child {
+        @include makeColumn(1.25);
+      }
+    }
+  }
+  &Parameter {
+    .row:first-child {
+      justify-content: start;
+      div:nth-child(1) {
+        @include makeColumn(5);
+      }
+      div:nth-child(2) {
+        @include makeColumn(2);
+      }
+      div:nth-child(3) {
+        @include makeColumn(3);
+      }
+    }
+  }
+  &Chart {
+    .row:first-child {
+      justify-content: start;
+      div {
+        @include makeColumn(10);
+      }
+    }
+  }
+  &Trend {
+    .row:first-child {
+      justify-content: start;
+      div:nth-child(1) {
+        @include makeColumn(7.5);
+      }
+      div:nth-child(2) {
+        @include makeColumn(2.5);
+      }
+    }
+  }
+}
+.device {
+  hr {
+    width: 100%
+  }
+  &Title {
+    @include makeColumn(5);
+  }
+  &Id {
+    @include makeColumn(1.25);
+  }
+  &Toggle, &Edit, &Remove {
+    @include makeColumn(1.25);
+    text-align: center;
+  }
+}
+.parameter {
+  hr {
+    width: 100%
+  }
+  &Title {
+    @include makeColumn(5);
+  }
+  &Register {
+    @include makeColumn(2);
+  }
+  &FunctionCode {
+    @include makeColumn(1.75);
+  }
+  &Remove {
+    @include makeColumn(1.25);
+    text-align: center;
+  }
+}
+.chart {
+  hr {
+    width: 100%
+  }
+  &Title {
+    @include makeColumn(7.5);
+  }
+  &Edit, &Remove {
+    @include makeColumn(1.25);
+    text-align: center;
+  }
+}
+.trend {
+  hr {
+    width: 100%;
+  }
+  &Title {
+    @include makeColumn(7.5);
+  }
+  &Color {
+    @include makeColumn(1.25);
+    hr {
+      border-width: 2px !important;
+    }
+  }
+  &Remove {
+    @include makeColumn(1.25);
+    text-align: center;
+  }
+}
+.sortUp::after, .sortDown::after {
+  display: inline-block;
+  font-family: bootstrap-icons!important;
+  font-style: normal;
+  font-weight: 400!important;
+  font-variant: normal;
+  font-size: 0.5rem;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+.sort.sortUp::after {
+  content: '\00a0''\F229';
+  vertical-align: sub !important;
+}
+.sort.sortDown::after {
+  content: '\00a0''\F235';
+  vertical-align: super !important;
+}
+#PageChart {
+  height: 100%;
+  width: 100%;
+}
+.highcharts-graph {
+  stroke-width: 2px;
+}

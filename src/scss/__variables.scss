@@ -1,0 +1,47 @@
+/* Змінні */
+$body-bg-color: #E0FFFF;
+$secondary-bg-color: shade-color($body-bg-color, 10%);
+$tertiary-bg-color: shade-color($body-bg-color, 20%);
+$border-color: shade-color($body-bg-color, 30%);
+$body-color: shade-color($body-bg-color, 60%);
+$secondary-color: tint-color($body-color, 10%);
+$tertiary-color: tint-color($body-color, 20%);
+$link-color: #49A6A6;
+$link-color-hover: tint-color($link-color, 10%);
+
+$body-bg-color-dark: #0B131B;
+$secondary-bg-color-dark: tint-color($body-bg-color-dark, 10%);
+$tertiary-bg-color-dark: tint-color($body-bg-color-dark, 20%);
+$border-color-dark: tint-color($body-bg-color-dark, 30%);
+$body-color-dark: tint-color($body-bg-color-dark, 60%);
+$secondary-color-dark: shade-color($body-color-dark, 10%);
+$tertiary-color-dark: shade-color($body-color-dark, 20%);
+$link-color-dark: #94774D;
+$link-color-hover-dark: tint-color($link-color-dark, 10%);
+
+:root[theme="light"] {
+  --body-bg-color: #{$body-bg-color};
+  --secondary-bg-color: #{shade-color($body-bg-color, 10%)};
+  --tertiary-bg-color: #{shade-color($body-bg-color, 20%)};
+  --border-color: #{shade-color($body-bg-color, 30%)};
+  --body-color: #{$body-color};
+  --secondary-color: #{tint-color($body-color, 10%)};
+  --tertiary-color: #{tint-color($body-color, 20%)};
+  --link-color: #{$link-color};
+  --link-color-hover: #{tint-color($link-color, 10%)};
+  --danger-color: #CD5C5C;
+  --select-arrow: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%235a6666'  xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>");
+}
+:root[theme="dark"] {
+  --body-bg-color: #{$body-bg-color-dark};
+  --secondary-bg-color: #{tint-color($body-bg-color-dark, 10%)};
+  --tertiary-bg-color: #{tint-color($body-bg-color-dark, 20%)};
+  --border-color: #{tint-color($body-bg-color-dark, 30%)};
+  --body-color: #{$body-color-dark};
+  --secondary-color: #{shade-color($body-color-dark, 10%)};
+  --tertiary-color: #{shade-color($body-color-dark, 20%)};
+  --link-color: #{$link-color-dark};
+  --link-color-hover: #{tint-color($link-color-dark, 10%)};
+  --danger-color: #B22222;
+  --select-arrow: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%239da1a4'  xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>");
+}

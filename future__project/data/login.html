@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html theme="light" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COVENANT</title>
+  <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="row">
+    <label class="column__8">Login</label><br>
+    <input type="text" placeholder="Login" class="column__8 validator" id="login"><br>
+    <label class="column__8">Password</label><br>
+    <input type="password" placeholder="Password"  class="column__8 validator" id="password"><br>
+    <button class="button column__8" id="button__login"><i class="bi bi-box-arrow-in-right"></i> УВІЙТИ</button><br>
+  </div>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    .column__8:not(label) {
+      margin-bottom: 0.5rem;
+    }
+  </style>       
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script>
+    window.onload = function() {
+      document.body.style.visibility = 'visible';
+    }
+    $(document).ready(function() {
+      $('#button__login').on('click', function() {
+        if (formValidator($('.row'))) {
+          $.ajax({
+            url: "/loginPage",
+            type: "GET",
+            timeout: 1000,
+            data: {
+              action: 'login',
+              login:  $('#login').val(),
+              password:  $('#password').val()
+            },
+            success: function(data, status, xhr) {
+              if (status === "success") {
+                let token = xhr.getResponseHeader("Authorization");
+                if (token) {
+                  localStorage.setItem("token", token);
+                  window.location.href = "/"; 
+                }
+              }
+            },
+            error: function(xhr, status, error) {
+              alert('ЛОГІН АБО ПАРОЛЬ НЕ ВІРНІ');
+            }
+          });
+        } else {
+          alert('ВВЕДІТЬ ПУСТІ ЗНАЧЕННЯ');
+        }
+      });
+      function formValidator(parent) {
+        var validator = true;
+          $.each(parent.find('.validator'), function() {
+            if ($(this).val() === null ? true : !$(this).val().length ? true : false) {
+              $(this).addClass('invalid');
+              validator = false;
+            }
+          });
+        return validator;
+      }
+      $('input').on('input', function() {
+        $(this).removeClass('invalid');
+      });
+      function alert(message) {
+        let div = 
+          `<div class="alert">
+            <div class="alertBox">
+              <div class="alertBoxContent">${message}</div>
+                <a href="#" class="alertClose"><i class="bi bi-x-lg"></i></a>
+              </div>
+            </div>
+          </div>`
+        $('body').append(div);
+      }
+      $(document).on('click', '.alertClose', function(event) {
+        event.preventDefault();
+        $(this).closest('.alert').remove();
+      });
+    });
+  </script>
+</body>
+</html>

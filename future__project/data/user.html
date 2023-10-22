@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html theme="light" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVENANT</title>
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ВЕРХНЕ МЕНЮ -->
+    <nav>
+        <div class="navigation">
+            <a href="#" class="button" toggle="collapse" aria="#main__menu">
+                <i class="bi bi-list"></i>
+            </a>
+            <ul class="navigation__menu">
+                <li class="navigation__menu__item">
+                    <input type="checkbox" class="btn-check" id="theme__mode">
+                    <label class="button" for="theme__mode">
+                        <i class="bi bi-sun"></i>
+                    </label>
+                </li>
+                <li class="navigation__menu__item dropdown">
+                    <button type="button" class="button">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__menu__item"><i class="bi bi-person-lock"></i> ОПЕРАТОР</li>
+                        <hr>
+                        <li class="dropdown__menu__item">
+                            <a class="dropdown__menu__link" href="#" id="exit">
+                                <i class="bi bi-box-arrow-left"></i> Вийти
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- НАВІГАЦІЯ -->
+    <div class="navigation collapse" id="main__menu">
+        <ul class="navigation__menu__vertical">
+            <li class="navigation__menu__item">
+                <a class="navigation__menu__link" href="#" toggle="page" aria="#page__main">
+                    <i class="bi bi-house"></i> Головна
+                </a>
+            </li>
+
+            <li class="navigation__menu__item">
+                <a class="navigation__menu__link" href="#" toggle="page" aria="#page__report">
+                    <i class="bi bi-journals"></i> Репорт
+                </a>
+            </li>
+
+            <li class="navigation__menu__item">
+                <a class="navigation__menu__link" href="#" toggle="collapse" aria="#main__menu__charts">
+                    <i class="bi bi-graph-up"></i> Графік
+                </a>
+            </li>
+            <ul class="navigation__menu__vertical collapse" id="main__menu__charts" toggle="page" aria="#page__chart">
+                <li class="navigation__menu__item">
+                    <a class="navigation__menu__link" href="#">
+                        <i class="bi bi-activity"></i> Поточний
+                    </a>
+                </li>
+             
+                <li class="navigation__menu__item">
+                    <a class="navigation__menu__link" href="#">
+                        <i class="bi bi-file-zip"></i> Архівний
+                    </a>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <main>
+        <!-- ОСНОВНА -->
+        <div class="page visible" id="page__main">
+            main
+        </div>
+        <!-- РЕПОРТИ -->
+        <div class="page" id="page__report">
+            report
+        </div>
+        <!-- ГРАФІКИ -->
+        <div class="page" id="page__chart">
+            chart
+        </div>
+       
+        
+    </main>
+    
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

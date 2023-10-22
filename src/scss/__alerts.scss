@@ -1,0 +1,97 @@
+.alert {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  &Box {
+    height: auto;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--body-bg-color);
+    color: var(--body-color);
+    &Content {
+      padding: 0.5rem;
+      flex: 1;
+    }
+    a {
+      display: block;
+      padding: 0.5rem;
+      align-self: flex-start;
+      font-family: sans-serif;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-decoration: none;
+      color: var(--body-color);
+    }
+  }
+}  
+
+.confirm {
+  z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  &Box {
+    height: auto;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 33.3%;
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--body-bg-color);
+    color: var(--body-color);
+    hr {
+      width: 100%;
+      margin: 0.5rem !important;
+      margin-top: 0 !important;
+    }
+    &Content {
+      padding: 0.5rem;
+      width: 100%;
+      hr:last-of-type {
+        width: 100%;
+        margin-bottom: 0 !important;
+      }
+    }
+    &Content:not(:has(*)) {
+      text-align: center;
+    }
+    > button {
+      display: block;
+      width: 20%;
+      margin-bottom: 0.5rem;
+      align-self: flex-start;
+      font-family: sans-serif;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-decoration: none;
+    }
+  }
+} 

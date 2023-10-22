@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html theme="light" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVENANT</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        let token = localStorage.getItem("token");
+        $.ajax({
+            type: 'GET',
+            url: '/token',
+            headers: {
+              "Authorization": token
+            },
+            success: function(response) {
+                if (response == 'Unauthorized') {
+                  window.location.href = "/login";
+                } else if (response == 'Admin authorized') {
+                  window.location.href = "/admin";
+                } else if (response == 'User authorized') {
+                  window.location.href = "/user";
+                }
+            },
+            error: function() {
+              
+            }
+        });
+    </script>
+</body>
+</html>

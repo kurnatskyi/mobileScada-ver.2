@@ -1,0 +1,48 @@
+#DeviceSettingWindow {
+  padding-bottom: 0;
+  input {
+    margin-bottom: 0.5rem;
+  }
+  .row {
+    div {
+        @include makeColumn(5);
+    }
+  }
+}
+#ParameterSettingWindow {
+  padding-bottom: 0;
+  input, select {
+    margin-bottom: 0.5rem;
+  }
+  .row {
+    div {
+        @include makeColumn(5);
+    }
+  }
+}
+#ChartSettingWindow {
+  padding-bottom: 0;
+  input, select {
+    margin-bottom: 0.5rem;
+  }
+}
+#TrendSettingWindow {
+  padding-bottom: 0;
+  input, select {
+    margin-bottom: 0.5rem;
+  }
+  .row {
+    div:nth-child(1) {
+      @include makeColumn(8.5);
+    }
+    div:nth-child(2) {
+      @include makeColumn(1.5);
+    }
+    div:nth-child(3) {
+      @include makeColumn(8.5);
+    }
+    div:nth-child(4) {
+      @include makeColumn(1.5);
+    }
+  }
+}

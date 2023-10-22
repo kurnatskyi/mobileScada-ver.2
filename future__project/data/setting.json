@@ -1,0 +1,13 @@
+{
+  "wifiMode": "sta",
+  "ssid": "Anastasiya",
+  "wifiPassword": "01122012",
+  "apName": "esp32",
+  "apPassword": "",
+  "ipMode": "dhcp",
+  "dnsName": "serhii",
+  "localIp": "",
+  "gateway": "",
+  "subnet": "",
+  "project": ""
+}
